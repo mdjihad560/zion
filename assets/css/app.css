@@ -4242,6 +4242,11 @@ img.social-hide {
   }
 }
 
+.zion-video-section video {
+  width: 100%;
+  border-radius: 10px;
+}
+
 input[type=text],
 input[type=email],
 input[type=password],
