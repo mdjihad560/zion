@@ -3639,23 +3639,26 @@ img.social-hide {
   transform: scaleY(1);
 }
 
+.zion-hero-section {
+  margin-top: 86.92px;
+}
 .zion-hero-content {
   position: relative;
-  padding: 210px 0 0;
+  padding: 124px 0 0;
 }
 @media (max-width: 1199px) {
   .zion-hero-content {
-    padding: 190px 0 0;
+    padding: 100px 0 0;
   }
 }
 @media (max-width: 991px) {
   .zion-hero-content {
-    padding: 170px 0 0;
+    padding: 90px 0 0;
   }
 }
 @media (max-width: 767px) {
   .zion-hero-content {
-    padding: 150px 0 0;
+    padding: 70px 0 0;
   }
 }
 .zion-hero-thumb {
