@@ -8,8 +8,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   "use strict";
 
   /*--------------------------------------------------------------
-   [Table of contents]
-  
+  [Table of contents]
   ZION HEADER TRIGER JS INIT
   ZION HEADER STICKY MENU JS INIT
   ZION PRELOADER JS INIT
@@ -30,7 +29,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   END IMAGE SCROLL ROTATE JS INIT
   ZION GSAP IMAGE ANIMATION JS INIT
   
-  
   /*--------------------------------------------------------------
   CUSTOM PRE DEFINE FUNCTION
   ------------------------------------------------------------*/
@@ -50,17 +48,17 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   });
 
   /*--------------------------------------------------------------
-    zion STICKY MENU JS INIT
+  zion STICKY MENU JS INIT
   --------------------------------------------------------------*/
 
   var lastScroll = 0;
   function sticky_header() {
-    var header_hegith = $('header').innerHeight();
+    var header_hegith = $("header").innerHeight();
     var scroll = $(window).scrollTop();
     if (scroll > header_hegith && scroll > lastScroll) {
-      $('header').addClass('hide-header');
+      $("header").addClass("hide-header");
     } else if (scroll < lastScroll) {
-      $('header').removeClass('hide-header');
+      $("header").removeClass("hide-header");
     }
     lastScroll = scroll;
   }
@@ -76,11 +74,11 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   window.onresize = function (event) {
     sticky_header();
   };
-  $(window).on('scroll', function () {
+  $(window).on("scroll", function () {
     if ($(window).scrollTop() > 20) {
-      $('#sticky-menu').addClass('sticky-menu');
+      $("#sticky-menu").addClass("sticky-menu");
     } else {
-      $('#sticky-menu').removeClass('sticky-menu');
+      $("#sticky-menu").removeClass("sticky-menu");
     }
   });
 
@@ -88,13 +86,13 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   ZION PROGRES CIRCLE JS INIT
   --------------------------------------------------------------*/
 
-  var progressPath = document.querySelector('.progress-wrap path');
+  var progressPath = document.querySelector(".progress-wrap path");
   var pathLength = progressPath.getTotalLength();
-  progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-  progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+  progressPath.style.transition = progressPath.style.WebkitTransition = "none";
+  progressPath.style.strokeDasharray = pathLength + " " + pathLength;
   progressPath.style.strokeDashoffset = pathLength;
   progressPath.getBoundingClientRect();
-  progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+  progressPath.style.transition = progressPath.style.WebkitTransition = "stroke-dashoffset 10ms linear";
   var updateProgress = function updateProgress() {
     var scroll = $(window).scrollTop();
     var height = $(document).height() - $(window).height();
@@ -105,16 +103,16 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   $(window).scroll(updateProgress);
   var offset = 50;
   var duration = 550;
-  jQuery(window).on('scroll', function () {
+  jQuery(window).on("scroll", function () {
     if (jQuery(this).scrollTop() > offset) {
-      jQuery('.progress-wrap').addClass('active-progress');
+      jQuery(".progress-wrap").addClass("active-progress");
     } else {
-      jQuery('.progress-wrap').removeClass('active-progress');
+      jQuery(".progress-wrap").removeClass("active-progress");
     }
   });
-  jQuery('.progress-wrap').on('click', function (event) {
+  jQuery(".progress-wrap").on("click", function (event) {
     event.preventDefault();
-    jQuery('html, body').animate({
+    jQuery("html, body").animate({
       scrollTop: 0
     }, duration);
     return false;
@@ -122,7 +120,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   /*--------------------------------------------------------------
   ZION CTA SLIDER JS INIT
   --------------------------------------------------------------*/
-  var t_slider = $('.zion-cta-slider-init');
+  var t_slider = $(".zion-cta-slider-init");
   if (t_slider.is_exist()) {
     t_slider.slick({
       slidesToShow: 1,
@@ -132,7 +130,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       speed: 13000,
       arrows: false,
       pauseOnHover: false,
-      cssEase: 'linear',
+      cssEase: "linear",
       responsive: [{
         breakpoint: 1024,
         settings: {
@@ -149,7 +147,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   /*--------------------------------------------------------------
   ZION CTA SLIDER JS INIT2
   --------------------------------------------------------------*/
-  var t_slider2 = $('.zion-cta-slider-init2');
+  var t_slider2 = $(".zion-cta-slider-init2");
   if (t_slider2.is_exist()) {
     t_slider2.slick({
       slidesToShow: 1,
@@ -160,7 +158,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       rtl: true,
       arrows: false,
       pauseOnHover: false,
-      cssEase: 'linear',
+      cssEase: "linear",
       responsive: [{
         breakpoint: 1024,
         settings: {
@@ -178,13 +176,13 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   /*--------------------------------------------------------------
   ZION TESTIMONIAL JS INIT
   --------------------------------------------------------------*/
-  var $carousel = $('.slick-slide-active').slick({
+  var $carousel = $(".slick-slide-active").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: false,
     infinite: false,
-    prevArrow: $('.slick-prev'),
-    nextArrow: $('.slick-next'),
+    prevArrow: $(".slick-prev"),
+    nextArrow: $(".slick-next"),
     responsive: [{
       breakpoint: 1199,
       settings: {
@@ -218,14 +216,16 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   ZION AOS ANIMATION JS INIT
   --------------------------------------------------------------*/
   AOS.init({
-    once: true // Ensure animations can trigger multiple times
+    once: true,
+    // Ensure animations can trigger multiple times
+    duration: 800
   });
 
   /*--------------------------------------------------------------
   ZION BRAND JS INIT
   --------------------------------------------------------------*/
 
-  var i_slider_data = $('.zion-brand-slider-js-init');
+  var i_slider_data = $(".zion-brand-slider-js-init");
   if (i_slider_data.is_exist()) {
     i_slider_data.slick({
       slidesToShow: 3,
@@ -235,7 +235,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       speed: 3000,
       arrows: false,
       pauseOnHover: false,
-      cssEase: 'linear',
+      cssEase: "linear",
       responsive: [{
         breakpoint: 500,
         settings: {
@@ -248,7 +248,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   /*--------------------------------------------------------------
   ZION BRAND JS INIT2
   --------------------------------------------------------------*/
-  var i_slider_data = $('.zion-brand-slider-js-init2');
+  var i_slider_data = $(".zion-brand-slider-js-init2");
   if (i_slider_data.is_exist()) {
     i_slider_data.slick({
       slidesToShow: 3,
@@ -259,7 +259,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       arrows: false,
       rtl: true,
       pauseOnHover: false,
-      cssEase: 'linear',
+      cssEase: "linear",
       responsive: [{
         breakpoint: 500,
         settings: {
@@ -272,19 +272,19 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   /*--------------------------------------------------------------
   ZION TAB SLIDER JS INIT
   --------------------------------------------------------------*/
-  $('ul.tabs li').click(function () {
-    var tab_id = $(this).attr('data-tab');
-    $('ul.tabs li').removeClass('current');
-    $('.zion-tab-content').removeClass('current');
-    $(this).addClass('current');
-    $("#" + tab_id).addClass('current');
+  $("ul.tabs li").click(function () {
+    var tab_id = $(this).attr("data-tab");
+    $("ul.tabs li").removeClass("current");
+    $(".zion-tab-content").removeClass("current");
+    $(this).addClass("current");
+    $("#" + tab_id).addClass("current");
   });
 
   /*--------------------------------------------------------------
   ZION PORTFOLIO JS INIT
   --------------------------------------------------------------*/
 
-  var i_slider_data = $('.zion-portfolio-slider-js-init');
+  var i_slider_data = $(".zion-portfolio-slider-js-init");
   if (i_slider_data.is_exist()) {
     i_slider_data.slick({
       slidesToShow: 3,
@@ -295,7 +295,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       infinite: true,
       arrows: false,
       pauseOnHover: false,
-      cssEase: 'linear',
+      cssEase: "linear",
       responsive: [{
         breakpoint: 500,
         settings: {
@@ -349,7 +349,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
         autoExpandHorizontalScroll: true
       },
       updateOnContentResize: true,
-      scrollbarPosition: 'outside',
+      scrollbarPosition: "outside",
       scrollInertia: 200
     });
   });
@@ -358,7 +358,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   ZION TESTIMONA JS INIT2
   --------------------------------------------------------------*/
 
-  var t_slider = $('.zion-t-slider-init2');
+  var t_slider = $(".zion-t-slider-init2");
   if (t_slider.is_exist()) {
     t_slider.slick(_defineProperty(_defineProperty(_defineProperty({
       slidesToShow: 1,
@@ -367,13 +367,13 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       arrows: false,
       dots: true,
       infinite: true
-    }, "autoplay", true), "speed", 1000), "lazyLoad", 'progressive'));
+    }, "autoplay", true), "speed", 1000), "lazyLoad", "progressive"));
   }
 
   /*--------------------------------------------------------------
   ZION MAP JS INIT
   ------------------------------------------------------------*/
-  var google_map = $('#map');
+  var google_map = $("#map");
   if (google_map.is_exist()) {
     var init = function init() {
       var mapOptions = {
@@ -384,107 +384,107 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
         scaleControl: false,
         draggable: true,
         disableDefaultUI: true,
-        center: new google.maps.LatLng(40.6700, -73.9400),
+        center: new google.maps.LatLng(40.67, -73.94),
         styles: [{
-          "featureType": "landscape.man_made",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#f7f1df"
+          featureType: "landscape.man_made",
+          elementType: "geometry",
+          stylers: [{
+            color: "#f7f1df"
           }]
         }, {
-          "featureType": "landscape.natural",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#d0e3b4"
+          featureType: "landscape.natural",
+          elementType: "geometry",
+          stylers: [{
+            color: "#d0e3b4"
           }]
         }, {
-          "featureType": "landscape.natural.terrain",
-          "elementType": "geometry",
-          "stylers": [{
-            "visibility": "off"
+          featureType: "landscape.natural.terrain",
+          elementType: "geometry",
+          stylers: [{
+            visibility: "off"
           }]
         }, {
-          "featureType": "poi",
-          "elementType": "labels",
-          "stylers": [{
-            "visibility": "off"
+          featureType: "poi",
+          elementType: "labels",
+          stylers: [{
+            visibility: "off"
           }]
         }, {
-          "featureType": "poi.business",
-          "elementType": "all",
-          "stylers": [{
-            "visibility": "off"
+          featureType: "poi.business",
+          elementType: "all",
+          stylers: [{
+            visibility: "off"
           }]
         }, {
-          "featureType": "poi.medical",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#fbd3da"
+          featureType: "poi.medical",
+          elementType: "geometry",
+          stylers: [{
+            color: "#fbd3da"
           }]
         }, {
-          "featureType": "poi.park",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#bde6ab"
+          featureType: "poi.park",
+          elementType: "geometry",
+          stylers: [{
+            color: "#bde6ab"
           }]
         }, {
-          "featureType": "road",
-          "elementType": "geometry.stroke",
-          "stylers": [{
-            "visibility": "off"
+          featureType: "road",
+          elementType: "geometry.stroke",
+          stylers: [{
+            visibility: "off"
           }]
         }, {
-          "featureType": "road",
-          "elementType": "labels",
-          "stylers": [{
-            "visibility": "off"
+          featureType: "road",
+          elementType: "labels",
+          stylers: [{
+            visibility: "off"
           }]
         }, {
-          "featureType": "road.highway",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "#ffe15f"
+          featureType: "road.highway",
+          elementType: "geometry.fill",
+          stylers: [{
+            color: "#ffe15f"
           }]
         }, {
-          "featureType": "road.highway",
-          "elementType": "geometry.stroke",
-          "stylers": [{
-            "color": "#efd151"
+          featureType: "road.highway",
+          elementType: "geometry.stroke",
+          stylers: [{
+            color: "#efd151"
           }]
         }, {
-          "featureType": "road.arterial",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "#ffffff"
+          featureType: "road.arterial",
+          elementType: "geometry.fill",
+          stylers: [{
+            color: "#ffffff"
           }]
         }, {
-          "featureType": "road.local",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "black"
+          featureType: "road.local",
+          elementType: "geometry.fill",
+          stylers: [{
+            color: "black"
           }]
         }, {
-          "featureType": "transit.station.airport",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "#cfb2db"
+          featureType: "transit.station.airport",
+          elementType: "geometry.fill",
+          stylers: [{
+            color: "#cfb2db"
           }]
         }, {
-          "featureType": "water",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#a2daf2"
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [{
+            color: "#a2daf2"
           }]
         }]
       };
-      var mapElement = document.getElementById('map');
+      var mapElement = document.getElementById("map");
       var map = new google.maps.Map(mapElement, mapOptions);
       var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(40.6700, -73.9400),
+        position: new google.maps.LatLng(40.67, -73.94),
         map: map,
-        title: 'zion'
+        title: "zion"
       });
-      var contentString = '<div id="content">' + '<div id="tpw">' + '<h3>zion' + '</div>';
+      var contentString = '<div id="content">' + '<div id="tpw">' + "<h3>zion" + "</div>";
       var infowindow = new google.maps.InfoWindow({
         content: contentString,
         maxWidth: 280
@@ -492,17 +492,17 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       marker.setAnimation(google.maps.Animation.BOUNCE);
       setTimeout(function () {
         marker.setAnimation(null);
-      }, 750); //time it takes for one bounce   
+      }, 750); //time it takes for one bounce
 
-      google.maps.event.addListener(marker, 'click', function () {
+      google.maps.event.addListener(marker, "click", function () {
         infowindow.open(map, marker);
       });
     };
-    google.maps.event.addDomListener(window, 'load', init);
+    google.maps.event.addDomListener(window, "load", init);
   }
 
   /*===========================================
-      = ZION IMAGE SCROLL ROTATE JS INIT      =
+    = ZION IMAGE SCROLL ROTATE JS INIT      =
   =============================================*/
 
   var swiper = new Swiper(".zion-about-thumb-slider", {
@@ -539,7 +539,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   });
 
   /*===========================================
-      =    ZION GSAP IMAGE ANIMATION JS INIT      =
+    =    ZION GSAP IMAGE ANIMATION JS INIT      =
   =============================================*/
 
   gsap.registerPlugin(ScrollTrigger);
@@ -580,7 +580,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   }, 0);
 
   /*===========================================
-      =    ZION IMAGE SCROLL ROTATE JS INIT      =
+    =    ZION IMAGE SCROLL ROTATE JS INIT      =
   =============================================*/
 
   gsap.registerPlugin(ScrollTrigger);
@@ -645,12 +645,24 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   });
 
   /*===========================================
-      =    Preloader      =
+    =    Scroll Animation      =
+  =============================================*/
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+  if ($("#smooth-wrapper").length && $("#smooth-content").length) {
+    ScrollSmoother.create({
+      smooth: 1.35,
+      effects: true,
+      smoothTouch: 0.1,
+      ignoreMobileResize: true
+    });
+  }
+
+  /*===========================================
+    =    Preloader      =
   =============================================*/
   function preloader() {
-    $('.preloader').delay(0).fadeOut();
+    $(".preloader").delay(0).fadeOut();
   }
-  ;
 })(jQuery);
 
 // add thumb anim

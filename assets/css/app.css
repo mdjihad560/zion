@@ -1472,16 +1472,6 @@ a.white-color {
   }
 }
 
-.footer-sticky {
-  position: sticky;
-  bottom: 0;
-}
-@media (max-width: 991px) {
-  .footer-sticky {
-    position: static;
-  }
-}
-
 /*1.2 components css*/
 .zion-brand-slider-js-init2.slick-initialized.slick-slider {
   direction: rtl;
