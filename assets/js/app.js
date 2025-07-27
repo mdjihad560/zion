@@ -222,6 +222,49 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   });
 
   /*--------------------------------------------------------------
+  ZION tp-text-invert-3
+  --------------------------------------------------------------*/
+
+  function zion_text_invert() {
+    var split_1 = new SplitText(".zion_text_invert", {
+      type: "lines"
+    });
+    split_1.lines.forEach(function (target) {
+      gsap.to(target, {
+        backgroundPositionX: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: target,
+          scrub: 1,
+          start: "top 85%",
+          end: "bottom center"
+        }
+      });
+    });
+  }
+  function zion_text_invert_2() {
+    var split_2 = new SplitText(".zion_text_invert_2", {
+      type: "lines"
+    });
+    split_2.lines.forEach(function (target) {
+      gsap.to(target, {
+        backgroundPositionX: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: target,
+          scrub: 1,
+          start: "top 85%",
+          end: "bottom center"
+        }
+      });
+    });
+  }
+  $(function () {
+    zion_text_invert();
+    zion_text_invert_2();
+  });
+
+  /*--------------------------------------------------------------
   ZION BRAND JS INIT
   --------------------------------------------------------------*/
 
@@ -656,13 +699,89 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       ignoreMobileResize: true
     });
   }
-
   /*===========================================
     =    Preloader      =
   =============================================*/
   function preloader() {
     $(".preloader").delay(0).fadeOut();
   }
+
+  // Register plugins if not already done
+  gsap.registerPlugin(ScrollTrigger);
+  var pr = gsap.matchMedia();
+  pr.add("(min-width: 767px)", function () {
+    var otherSections = document.querySelectorAll(".des-portfolio-panel");
+    otherSections.forEach(function (section) {
+      gsap.set(section, {
+        scale: 1
+      }); // ✅ only set this section
+
+      gsap.to(section, {
+        scale: 0.8,
+        scrollTrigger: {
+          trigger: section,
+          pin: section,
+          scrub: 1,
+          start: "top 0",
+          end: "bottom 60%",
+          endTrigger: ".des-portfolio-wrap",
+          // ✅ must exist in DOM
+          pinSpacing: false,
+          markers: false // ✅ Set true for debugging
+        }
+      });
+    });
+  });
 })(jQuery);
 
 // add thumb anim
+
+// 81. portfolio item pin js //
+var pi = gsap.matchMedia();
+pi.add("(min-width: 991px)", function () {
+  document.querySelectorAll(".team-sticky-section").forEach(function (group) {
+    var panels = group.querySelectorAll(".team-sticky");
+    var pinTarget = group.querySelector(".team-sticky-content");
+
+    // Get first and last panel for scroll range
+    var firstPanel = panels[0];
+    var lastPanel = panels[panels.length - 1];
+    if (pinTarget && firstPanel && lastPanel) {
+      ScrollTrigger.create({
+        trigger: firstPanel,
+        endTrigger: lastPanel,
+        pin: pinTarget,
+        start: "top 10px",
+        end: "bottom center",
+        scrub: 1,
+        pinSpacing: false,
+        markers: false // Set true for debugging
+      });
+    }
+  });
+});
+
+// 81. portfolio item pin js //
+var pi2 = gsap.matchMedia();
+pi2.add("(min-width: 991px)", function () {
+  document.querySelectorAll(".team-page-sticky-section").forEach(function (group) {
+    var panels = group.querySelectorAll(".team-position-stickys");
+    var pinTarget = group.querySelector(".team-sticky-top");
+
+    // Get first and last panel for scroll range
+    var firstPanel = panels[0];
+    var lastPanel = panels[panels.length - 1];
+    if (pinTarget && firstPanel && lastPanel) {
+      ScrollTrigger.create({
+        trigger: firstPanel,
+        endTrigger: lastPanel,
+        pin: pinTarget,
+        start: "top 2px",
+        end: "bottom top",
+        scrub: 1,
+        pinSpacing: false,
+        markers: false // Set true for debugging
+      });
+    }
+  });
+});

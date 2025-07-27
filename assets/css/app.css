@@ -2474,6 +2474,14 @@ a.white-color {
   top: 110px;
 }
 
+.zion-portfolio-row .pin-spacer {
+  height: 720px !important;
+}
+
+.des-portfolio-panel {
+  transform: translate3d(0px, 1233px, 0px) scale(0.908, 0.908) !important;
+}
+
 .zion-faq-item {
   padding-bottom: 30px;
   border-bottom: 1px solid rgba(0, 6, 40, 0.1019607843);
@@ -2742,8 +2750,6 @@ a.white-color {
   }
 }
 .zion-team-d-thumb {
-  position: sticky;
-  top: 100px;
   padding-right: 100px;
 }
 .zion-team-d-thumb img {
@@ -2800,6 +2806,10 @@ a.white-color {
   position: absolute;
   border-radius: 100px;
   background-color: var(--heading-bg);
+}
+
+.team-page-sticky-section {
+  overflow: hidden;
 }
 
 .zion-sidebar-social ul li {
@@ -4067,6 +4077,26 @@ img.social-hide {
   }
 }
 
+.zion_text_invert > div {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) 50%, #1d1d1b 50%);
+  padding: 10px 0;
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.zion_text_invert_2 > div {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.29) 50%, #fff 50%);
+  padding: 10px 0;
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .pt-130 {
   padding-top: 130px;
 }
@@ -4238,6 +4268,20 @@ img.social-hide {
 .zion-video-section video {
   width: 100%;
   border-radius: 10px;
+  margin-top: -200px;
+}
+.zion-video-wrapper {
+  height: 900px;
+  overflow: hidden;
+}
+
+.zion-about-hero-thumb img {
+  margin-top: -200px;
+}
+
+.zion-about-thumb-height {
+  height: 600px;
+  overflow: hidden;
 }
 
 input[type=text],
