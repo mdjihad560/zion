@@ -2,7 +2,7 @@ var Accordion = function(el, multiple) {
   this.el = el || {};
   this.multiple = multiple || false;
 
-  var links = this.el.find('.zion-faq-header');
+  var links = this.el.find('.wionfaq-header');
   links.on('click', {
       el: this.el,
       multiple: this.multiple
@@ -18,7 +18,7 @@ Accordion.prototype.dropdown = function(e) {
   $this.parent().toggleClass('open');
 
   if (!e.data.multiple) {
-      $el.find('.zion-faq-body').not($next).slideUp().parent().removeClass('open');
+      $el.find('.wionfaq-body').not($next).slideUp().parent().removeClass('open');
   };
 }
-var accordion = new Accordion($('.zion-faq-wrap1'), false);
+var accordion = new Accordion($('.wionfaq-wrap1'), false);

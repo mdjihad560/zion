@@ -7,7 +7,7 @@
  * @author: Jack Doyle, jack@greensock.com
  */
 /*!
- * HTML Template Name: zion - Creative Agency Template
+ * HTML Template Name: WION - Creative Agency Template
  * Developer Name: Kaium Hossain
  * Developer Website: https://sakebul.com
  */

@@ -1,14 +1,14 @@
 /*---------- 03. Mobile Menu Active ----------*/
 $.fn.vsmobilemenu = function (options) {
     var opt = $.extend({
-        menuToggleBtn: ".zion-menu-toggle",
-        bodyToggleClass: "zion-body-visible",
-        subMenuClass: "zion-submenu",
-        subMenuParent: "zion-item-has-children",
-        subMenuParentToggle: "zion-active",
-        meanExpandClass: "zion-mean-expand",
-        appendElement: '<span class="zion-mean-expand"></span>',
-        subMenuToggleClass: "zion-open",
+        menuToggleBtn: ".wionmenu-toggle",
+        bodyToggleClass: "wionbody-visible",
+        subMenuClass: "wionsubmenu",
+        subMenuParent: "wionitem-has-children",
+        subMenuParentToggle: "wionactive",
+        meanExpandClass: "wionmean-expand",
+        appendElement: '<span class="wionmean-expand"></span>',
+        subMenuToggleClass: "wionopen",
         toggleSpeed: 400,
       },
       options
@@ -84,4 +84,4 @@ $.fn.vsmobilemenu = function (options) {
     });
   };
 
-  $(".zion-menu-wrapper").vsmobilemenu();
+  $(".wionmenu-wrapper").vsmobilemenu();

@@ -2,7 +2,7 @@
   
 
   $( document ).ready(function() {
-    document.querySelectorAll('.zion-counter-item').forEach(counterItem => {
+    document.querySelectorAll('.wioncounter-item').forEach(counterItem => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
         if (entry.isIntersecting) {
